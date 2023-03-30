@@ -13,8 +13,8 @@ var penguinY2 =0;
 
 
 function drawspenguin(){
-  ctx clearRect(0,0,canvas.canvas.width, canvas.height);
-  ctx,drawImage(image,penguinX, penguinY)
+  ctx.clearRect(0,0,canvas.canvas.width, canvas.height);
+  ctx.drawImage(image,penguinX, penguinY)
 
 }
 
