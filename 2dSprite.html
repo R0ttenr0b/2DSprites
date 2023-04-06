@@ -18,16 +18,17 @@ canvas {
     const ctx = canvas.getContext('2d');
 
     const sprite = new Image();
-    sprite.src = 'penguin_sprite.png';
+    sprite.src = '2DSprites/Idle/0.png';
 
     const spriteInfo = {
       image: {
-        src: 'penguin_sprite.png',
+        src: '2DSprites/Idle/0.png',
         width: 200,
         height: 200
-      },   idle: {
+      },   
+      idle: {
         frames: [
-          { src: 'Idle/0.png', width: 50, height: 50 },
+          { src: '2dSprites/Idle/0.png', width: 50, height: 50 },
           { src: 'Idle/1.png', width: 50, height: 50 },
           { src: 'Idle/2.png', width: 50, height: 50 },
           { src: 'Idle/3.png', width: 50, height: 50 },
@@ -91,6 +92,30 @@ canvas {
       const frame = frames[animationState][frameIndex];
       ctx.drawImage(frame.image, x, y, frame.width, frame.height);
     }
+
+    function updatePosition(){
+x += moveX;
+y += moveY;
+
+if(x <0) {
+
+  x=0;
+ } else if (x > canvas.width - frames[animationState][frameIndex].width) {
+        x = canvas.width - frames[animationState][frameIndex].width;
+}
+
+
+if (y < 0) {
+        y = 0;
+      } else if (y > canvas.height - frames[animationState][frameIndex].height) {
+        y = canvas.height - frames[animationState][frameIndex].height;
+      }
+    
+
+
+
+
+
     </script>
 
 </body>
