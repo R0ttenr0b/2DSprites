@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset ="UTF-8">
   <title>2D Game Sprite</title>
   <style>
-    canvas {
-      border: 1px solid black;
-    }
-  </style>
-</head>
-<body>
-  <canvas id="gameCanvas" width="500" height="500"></canvas>
-  <script src="game.js"></script>
+canvas {
+
+  width: 640px;
+  height: 480;
+}
+<style>
+  <body>
+  <canvas id="gameCanvas"></canvas>
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const sprite = new Image();
+    sprite.src = 'penguin_sprite.png';
+
+    const spriteInfo = {
+      image: {
+        src: 'penguin_sprite.png',
+        width: 200,
+        height: 200
+      } ;
+      
+    </script>
 </body>
 </html>
