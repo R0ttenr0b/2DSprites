@@ -112,8 +112,27 @@ if (y < 0) {
       }
     
 
+      function updateFrameIndex() {
+      frameIndex++;
+      if (frameIndex >= frames[animationState].length) {
+        frameIndex = 0;
+      }
+    }
 
+    function update() {
+      updateAnimationState();
+      updatePosition();
+      updateFrameIndex();
+    }
 
+    function loop() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawSprite();
+      update();
+      requestAnimationFrame(loop);
+    }
+
+    }
 
 
     </script>
