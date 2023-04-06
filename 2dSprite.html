@@ -30,7 +30,15 @@ canvas {
           { src: 'Idle/0.png', width: 50, height: 50 },
           { src: 'Idle/1.png', width: 50, height: 50 },
           { src: 'Idle/2.png', width: 50, height: 50 },
-          { src: 'Idle/3.png', width: 50, height: 50 }
+          { src: 'Idle/3.png', width: 50, height: 50 },
+          { src: 'Idle/4.png', width: 50, height: 50 },
+          { src: 'Idle/5.png', width: 50, height: 50 },
+          { src: 'Idle/6.png', width: 50, height: 50 },
+          { src: 'Idle/7.png', width: 50, height: 50 },
+          { src: 'Idle/8.png', width: 50, height: 50 },
+          { src: 'Idle/9.png', width: 50, height: 50 },
+          { src: 'Idle/10.png', width: 50, height: 50 },
+          { src: 'Idle/11.png', width: 50, height: 50 }
         ],
         frameRate: 10
       },
@@ -72,6 +80,18 @@ canvas {
       }
     };
  
+    let animationState = 'idle';
+    let frameIndex = 0;
+    let x = canvas.width / 2;
+    let y = canvas.height / 2;
+    let moveX = 0;
+    let moveY = 0;
+
+    function drawSprite() {
+      const frame = frames[animationState][frameIndex];
+      ctx.drawImage(frame.image, x, y, frame.width, frame.height);
+    }
     </script>
+
 </body>
 </html>
