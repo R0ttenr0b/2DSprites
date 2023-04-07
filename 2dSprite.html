@@ -28,7 +28,7 @@ canvas {
       },   
       idle: {
         frames: [
-          { src: '2dSprites/Idle/0.png', width: 50, height: 50 },
+          { src: '2DSprites/Idle/0.png', width: 50, height: 50 },
           { src: 'Idle/1.png', width: 50, height: 50 },
           { src: 'Idle/2.png', width: 50, height: 50 },
           { src: 'Idle/3.png', width: 50, height: 50 },
@@ -136,10 +136,10 @@ if (y < 0) {
 
     function handleKeyDown(event){
       if (event.key === 'ArrowLeft'){
-      moveX = 5
+      moveX = -5
       } 
         else if (event.key =="ArrowRight"){
-        moveX = -5
+        moveX = 5
         }
         else if (event.key =="ArrowUP"){
         moveY =5
