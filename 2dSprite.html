@@ -7,7 +7,7 @@
 canvas {
 
   width: 640px;
-  height: 480;
+  height: 480px;
 }
 </style>
 </head>
@@ -149,7 +149,9 @@ if (y < 0) {
         }
       }
 
-    
+    sprite.onload = () => {
+      loop();
+    };
 
     </script>
 
