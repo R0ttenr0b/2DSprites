@@ -81,6 +81,37 @@ canvas {
       }
     };
  
+    const frames = {
+      idle: spriteInfo.idle.frames.map((frame) => {
+        const image = new Image();
+        image.src = frame.src;
+        return { image, width: frame.width, height: frame.height };
+      }),
+      walkNorth: spriteInfo.walkNorth.frames
+        const image = new Image();
+        image.src = frame.src;
+        return { image, width: frame.width, height: frame.height };
+      }),
+      walkNorth: spriteInfo.walkNorth.frames
+        const image = new Image();
+        image.src = frame.src;
+        return { image, width: frame.width, height: frame.height };
+      }),
+      walkNorth: spriteInfo.walkNorth.frames
+        const image = new Image();
+        image.src = frame.src;
+        return { image, width: frame.width, height: frame.height };
+      }),
+
+      walkNorth: spriteInfo.walkNorth.frames
+        const image = new Image();
+        image.src = frame.src;
+        return { image, width: frame.width, height: frame.height };
+      }),
+
+
+
+
     let animationState = 'idle';
     let frameIndex = 0;
     let x = canvas.width / 2;
