@@ -18,17 +18,17 @@ canvas {
     const ctx = canvas.getContext('2d');
 
     const sprite = new Image();
-    sprite.src = '2DSprites/Idle/0.png';
+    sprite.src = 'Idle/0.png';
 
     const spriteInfo = {
       image: {
-        src: '2DSprites/Idle/0.png',
+        src: 'Idle/0.png',
         width: 200,
         height: 200
       },   
       idle: {
         frames: [
-          { src: '2DSprites/Idle/0.png', width: 50, height: 50 },
+          { src: 'Idle/0.png', width: 50, height: 50 },
           { src: 'Idle/1.png', width: 50, height: 50 },
           { src: 'Idle/2.png', width: 50, height: 50 },
           { src: 'Idle/3.png', width: 50, height: 50 },
@@ -184,10 +184,10 @@ if (y < 0) {
         moveX = 5
         }
         else if (event.key =="ArrowUP"){
-        moveY =5
+        moveY = -5
         }
         else if (event.key =="ArrowDown"){
-        move = -5
+        move = 5
         }
       }
 
