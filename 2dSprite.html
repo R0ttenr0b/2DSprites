@@ -136,12 +136,12 @@ canvas {
 
 
     function updatePosition(){
-x += moveX;
-y += moveY;
+      x += moveX;
+      y += moveY;
 
-if(x <0) {
+    if(x <0) {
 
-  x=0;
+      x=0;
  } else if (x > canvas.width - frames[animationState][frameIndex].width) {
         x = canvas.width - frames[animationState][frameIndex].width;
 }
@@ -178,19 +178,21 @@ if (y < 0) {
 
     function handleKeyDown(event){
       if (event.key === 'ArrowLeft'){
-      moveX = -5
+      moveX = -5;
       } 
-        else if (event.key =="ArrowRight"){
-        moveX = 5
+        else if (event.key ==="ArrowRight"){
+        moveX = 5;
         }
-        else if (event.key =="ArrowUP"){
-        moveY = -5
+        else if (event.key ==="ArrowUP"){
+        moveY = -5;
         }
-        else if (event.key =="ArrowDown"){
-        move = 5
+        else if (event.key ==="ArrowDown"){
+        move = 5;
         }
       }
 
+      const sprite = new Image();
+    sprite.src = 'Idle/0.png';
     sprite.onload = () => {
       loop();
     };
