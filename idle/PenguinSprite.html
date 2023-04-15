@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>2D Sprite Animation</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="gameCanvas" width="900" height="400"></canvas>
+    <script>
+      const canvas = document.getElementById('gameCanvas');
+      const ctx = canvas.getContext('2d');
+
+      const animations = {
+        idle: ['idle_0.png','idle_1.png','idle_2.png','idle_3.png','idle_4.png','idle_5.png','idle_6.png','idle_7.png','idle_8.png','idle_9.png','idle_10.png','idle_11.png' ],
+        walk_E: ['walk_E_0.png', 'walk_E_1.png', 'walk_E_2.png', 'walk_E_3.png'],
+        walk_N: ['walk_N_0.png', 'walk_N_1.png', 'walk_N_2.png', 'walk_N_3.png'],
+        walk_S: ['walk_S_0.png', 'walk_S_1.png', 'walk_S_2.png', 'walk_S_3.png'],
+        walk_W: ['walk_W_0.png', 'walk_W_1.png', 'walk_W_2.png', 'walk_W_3.png']
+      };
+
+      const images = {};
+
+      for (const animation in animations) {
+        images[animation] = [];
+        for (const frame of animations[animation]) {
+          const img = new Image();
+          img.src = frame;
+          images[animation].push(img);
+        }
+      }
+
+      let currentAnimation = 'idle';
+      let frameIndex = 0;
+
+      let penguinX = 200;
+      let penguinY = 200;
+      let penguinMoveX = 0;
+      let penguinMoveY = 0;
+
+      document.addEventListener('keydown', handleKeyDown);
+      document.addEventListener('keyup', handleKeyUp);
+
+      function handleKeyDown(event) {
+        if (event.key === 'ArrowLeft') {
+          penguinMoveX = -2;
+          currentAnimation = 'walk_W';
+        } else if (event.key === 'ArrowRight') {
+          penguinMoveX = 2;
+          currentAnimation = 'walk_E';
+        } else if (event.key === 'ArrowUp') {
+          penguinMoveY = -2;
+          currentAnimation = 'walk_N';
+        } else if (event.key === 'ArrowDown') {
+          penguinMoveY = 2;
+          currentAnimation = 'walk_S';
+        }
+      }
+
+      function handleKeyUp(event) {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          penguinMoveX = 0;
+        } else if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+          penguinMoveY = 0;
+        }
+        currentAnimation = 'idle';
+      }
+
+      function updateAndDraw() {
+        penguinX += penguinMoveX;
+        penguinY += penguinMoveY;
+
+     
+        penguinX = Math.min(Math.max(0, penguinX), canvas.width - images[currentAnimation][frameIndex].width);
+        penguinY = Math.min(Math.max(0, penguinY), canvas.height - images[currentAnimation][frameIndex].height);
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(images[currentAnimation][frameIndex], penguinX, penguinY);
+        frameIndex = (frameIndex + 1)
+        frameIndex = (frameIndex + 1) % images[currentAnimation].length;
+      }
+
+      setInterval(updateAndDraw, 75);
+    </script>
+  </body>
+</html>
