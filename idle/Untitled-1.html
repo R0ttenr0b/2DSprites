@@ -23,7 +23,6 @@
         walk_W: ['walk_W_0.png', 'walk_W_1.png', 'walk_W_2.png', 'walk_W_3.png']
       };
 
-
       const images = {};
 
       for (const animation in animations) {
@@ -42,9 +41,10 @@
       let penguinY = 200;
       let penguinMoveX = 0;
       let penguinMoveY = 0;
+
       document.addEventListener('keydown', handleKeyDown);
       document.addEventListener('keyup', handleKeyUp);
-      
+
       function handleKeyDown(event) {
         if (event.key === 'ArrowLeft') {
           penguinMoveX = -5;
@@ -60,6 +60,16 @@
           currentAnimation = 'walk_S';
         }
       }
+
+      function handleKeyUp(event) {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          penguinMoveX = 0;
+        } else if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+          penguinMoveY = 0;
+        }
+        currentAnimation = 'idle';
+      }
+
       function updateAndDraw() {
         penguinX += penguinMoveX;
         penguinY += penguinMoveY;
