@@ -48,6 +48,12 @@
       function handleKeyDown(event) {
         if (event.key === 'ArrowLeft') {
           penguinMoveX = -2;
+          if (currentAnimation !== 'walk_W')
+{
+      currentAnimation = 'walk_W';
+      frameIndex = 0; 
+    }
+
           currentAnimation = 'walk_W';
         } else if (event.key === 'ArrowRight') {
           penguinMoveX = 2;
