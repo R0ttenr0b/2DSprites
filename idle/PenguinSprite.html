@@ -47,23 +47,29 @@
 
       function handleKeyDown(event) {
         if (event.key === 'ArrowLeft') {
-          penguinMoveX = -2;
-          if (currentAnimation !== 'walk_W')
-{
-      currentAnimation = 'walk_W';
-      frameIndex = 0; 
-    }
-
+          penguinMoveX = -16;
+          if (currentAnimation !== 'walk_W'){
           currentAnimation = 'walk_W';
+          frameIndex = 0; 
+    }
         } else if (event.key === 'ArrowRight') {
           penguinMoveX = 2;
+          if (currentAnimation !== 'walk_E'){
           currentAnimation = 'walk_E';
+          frameIndex = 0; 
+    }
         } else if (event.key === 'ArrowUp') {
-          penguinMoveY = -2;
+          penguinMoveY = -16;
+          if (currentAnimation !== 'walk_N'){
           currentAnimation = 'walk_N';
+          frameIndex = 0; 
+    }
         } else if (event.key === 'ArrowDown') {
           penguinMoveY = 2;
+          if (currentAnimation !== 'walk_S'){
           currentAnimation = 'walk_S';
+          frameIndex = 0; 
+    }
         }
       }
 
