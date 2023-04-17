@@ -10,13 +10,13 @@
     </style>
   </head>
   <body>
-    <canvas id="gameCanvas" width="1500" height="700"></canvas>
+    <canvas id="gameCanvas" width="900" height="900"></canvas>
     <script>
       const canvas = document.getElementById('gameCanvas');
       const ctx = canvas.getContext('2d');
 
       const backgroundImage = new Image();
-      backgroundImage.src = 'DMTEntity.jpg';
+      backgroundImage.src = 'Demon.webp';
 
       function drawBackground(){
           ctx.drawImage(backgroundImage,0,0,canvas.width,canvas.height);
