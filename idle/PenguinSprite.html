@@ -47,7 +47,7 @@
       let frameIndex = 0;
 
       let penguinX = 200;
-      let penguinY = 200;
+      let penguinY = 650;
       let penguinMoveX = 0;
       let penguinMoveY = 0;
 
@@ -56,25 +56,25 @@
 
       function handleKeyDown(event) {
         if (event.key === 'ArrowLeft') {
-          penguinMoveX = -4;
+          penguinMoveX = -6;
           if (currentAnimation !== 'walk_W'){
           currentAnimation = 'walk_W';
           frameIndex = 0; 
     }
         } else if (event.key === 'ArrowRight') {
-          penguinMoveX = 4;
+          penguinMoveX = 6;
           if (currentAnimation !== 'walk_E'){
           currentAnimation = 'walk_E';
           frameIndex = 0; 
     }
         } else if (event.key === 'ArrowUp') {
-          penguinMoveY = -4;
+          penguinMoveY = -1;
           if (currentAnimation !== 'walk_N'){
           currentAnimation = 'walk_N';
           frameIndex = 0; 
     }
         } else if (event.key === 'ArrowDown') {
-          penguinMoveY = 4;
+          penguinMoveY = 2;
           if (currentAnimation !== 'walk_S'){
           currentAnimation = 'walk_S';
           frameIndex = 0; 
